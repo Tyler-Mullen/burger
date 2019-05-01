@@ -9,10 +9,10 @@
           {{this.id}}
           {{this.burger_name}}
 
-          <form action="/{{this.id}}?_method=PUT" method="POST">
-			    <input type="hidden" name="devoured" value="true">
+          <form id="eat">
+          <input type="hidden" value="true" name="devoured">
 			    <button class="btn-primary" type="submit">Devour It!</button>
-		  </form>
+          </form>
       </li>
     {{/unless}}
   {{/each}}
@@ -33,11 +33,10 @@
 
 <h2>Add a burger</h2>
 
-<form class="create-form">
-
+<form class="create-update-form" action="/api/burgers" method="POST">
   <div class="form-group">
     <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="ca" name="burger_name">
   </div>
 
   <button type="submit">Add a burger</button>
