@@ -1,5 +1,7 @@
 <h1>Eat Da Burger App!</h1>
 
+<img src="/assets/img/burger.jpg">
+
 <h2>Uneaten burgers</h2>
 
 <ul>
@@ -9,9 +11,8 @@
           {{this.id}}
           {{this.burger_name}}
 
-          <form id="eat">
-          <input type="hidden" value="true" name="devoured">
-			    <button class="btn-primary" type="submit">Devour It!</button>
+          <form class="eat" data-id="{{this.id}}">
+			    <button type="submit">Devour It!</button>
           </form>
       </li>
     {{/unless}}

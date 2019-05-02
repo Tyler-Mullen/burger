@@ -1,7 +1,9 @@
 $(function() {
 
-    $("#eat").on("click", function(event){
-        
+    $(".eat").on("submit", function(event){
+        console.log("You clicked on the eat button.", event);
+        debugger;
+        event.preventDefault();
         var id = $(this).data("id");
         var name = $(this).data("burger_name");
 
@@ -9,7 +11,7 @@ $(function() {
             devoured: true
         };
 
-        $.ajax("/api/burgers" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newDevouredState
         }).then(
@@ -24,7 +26,7 @@ $(function() {
         event.preventDefault();
 
         var newBurger = {
-            name: $("#ca").val().trim(),
+            burger_name: $("#ca").val().trim(),
             devoured: 0
         };
 
