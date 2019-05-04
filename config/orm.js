@@ -33,6 +33,8 @@ function printQuestionMarks(num) {
 
 var orm = {
   all: function(tableInput, cb) {
+    console.log("querying");
+    console.log(connection);
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
