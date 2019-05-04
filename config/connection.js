@@ -7,6 +7,7 @@ console.log(process.env.JAWSDB_URL);
 if (process.env.JAWSDB_URL){
   console.log("####### Connecting to JAWS");
   connection = mysql.createConnection(process.env.JAWSDB_URL);
+  console.log("#########" , connection);
 }
 
 else{
